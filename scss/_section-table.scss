@@ -2,6 +2,169 @@
 
 .section-table {
     @include display-flex(column, flex-start, flex-start);
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &__main-title {
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 100%;
+        color: $text-color-1;
+        margin: 0 0 40px 0;
+    }
+
+    &__description {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 170%;
+        color: $text-color-2;
+        margin: 0 0 40px 0;
+
+        &_paragraph-1 {}
+
+        &_paragraph-2 {}
+    }
+
+    .table-image {
+        width: 100%;
+        height: 415px;
+        @include display-flex(column, flex-start, center);
+        overflow: hidden;
+
+        &__wrap {
+            position: relative;
+            width: 347px;
+            height: 100%;
+        }
+
+        &__picture {
+            position: absolute;
+            width: 100%;
+            height: 395px;
+            transition: all 3s ease 0s;
+
+            &_table-top {
+                top: 1px;
+                left: 0px;
+            }
+
+            &_table-bottom {
+                top: -10px;
+                left: 0px;
+            }
+        }
+
+        &__control {
+            position: absolute;
+            @include display-flex(row, center, flex-start);
+            width: 100%;
+            bottom: 150px;
+        }
+
+        .table-image__btn {
+            width: 61.15px;
+            height: 61.15px;
+            background: $accent-color;
+            border-radius: 50%;
+            margin: 0 11px;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12.2752px;
+            line-height: 20%;
+            color: #000000;
+
+            &_up {}
+
+            &_down {}
+        }
+
+        .tableAnimationCSS {
+            transform: translate(0, -48px);
+        }
+    }
+
+    @media (min-width: 1900px) {
+
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        .container {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 300px 300px 300px;
+            grid-row-gap: 20px;
+
+        }
+
+        .table-image {
+            order: 1;
+            height: 100%;
+            grid-row-start: 1;
+            grid-row-end: 4;
+
+            &__wrap {
+                width: 100%;
+            }
+
+            &__picture {
+                height: 869px;
+            }
+
+            .tableAnimationCSS {
+                transform: translate(0, -90px);
+            }
+        }
+
+        &__main-title {
+            width: 536px;
+            order: 2;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 62px;
+            line-height: 62px;
+            margin: 0;
+        }
+
+        &__description {
+            width: 500px;
+            font-size: 22px;
+            line-height: 37.4px;
+            margin: 0;
+
+            &_paragraph-1 {
+                order: 3;
+            }
+
+            &_paragraph-2 {
+                order: 4;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
 
 
